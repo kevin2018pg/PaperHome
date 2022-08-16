@@ -39,3 +39,7 @@
 
 ## LanguageModel
 1. QT-sim：sentence-bert  Sentence Embeddings using Siamese BERT-Networks
+2. Text-Match：ESIM（Enhanced LSTM）主要结构三层：
+    - 输入层：两端文本word embedding输入(w2v)+BiLSTM输出hidden layer；
+    - 抽取层：两个向量点乘（分析两个句子之间每个位置的相似度，最简单的方式就是点乘），过softmax之后，交叉相乘。再concat原向量，交叉向量，原-交叉，原*交叉；
+    - 推理层：两端输出再过LSTM，接avg+max pooling拼接，得到输出
